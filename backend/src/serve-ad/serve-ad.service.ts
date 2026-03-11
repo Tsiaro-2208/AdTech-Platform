@@ -2,14 +2,12 @@ import { Inject, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Campaign } from 'src/campaigns/campaigns.schema';
 import { Model } from 'mongoose';
-import Redis from 'ioredis';
 
 @Injectable()
 export class ServeAdService {
 
     constructor(
-        @InjectModel(Campaign.name) private readonly campaignModel: Model<Campaign>,
-        @Inject('REDIS_CLIENT') private readonly redis: Redis
+        @InjectModel(Campaign.name) private readonly campaignModel: Model<Campaign>
     ) { }
 
     async serveAd(country: string) {

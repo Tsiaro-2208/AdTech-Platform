@@ -1,13 +1,15 @@
 import { api } from "@/lib/api"
+import qs from 'qs'
 
 type ID = string | number
 
 export class BaseService<T> {
   constructor(protected endpoint: string) { }
 
-  async getAll(): Promise<T[]> {
-    const res = await api.get<T[]>(this.endpoint)
-    return res.data
+  async getAll(filter?: Record<string, any>): Promise<T[]> {
+    const query = filter ? `?${qs.stringify(filter)}` : '';
+    const res = await api.get<T[]>(`${this.endpoint}${query}`);
+    return res.data;
   }
 
   async getOne(id: ID): Promise<T> {

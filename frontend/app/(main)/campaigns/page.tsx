@@ -1,6 +1,10 @@
+import CampaignsFilter from "@/components/campaigns/filter"
+
 const CampaignsPage = () => {
   return (
-    <div>CampaignsPage</div>
+    <div className="w-full">
+      <CampaignsFilter />
+    </div>
   )
 }
 
