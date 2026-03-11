@@ -1,0 +1,11 @@
+**/node_modules
+**/dist
+**/.next
+**/.git
+**/.vscode
+**/.devcontainer
+**/npm-debug.log
+**/out
+**/build
+**/coverage
+.env
