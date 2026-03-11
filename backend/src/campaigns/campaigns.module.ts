@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { CampaignsService } from './campaigns.service';
 import { CampaignsController } from './campaigns.controller';
-import { Mongoose } from 'mongoose';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Campaign, CampaignSchema } from './campaigns.schema';
 
@@ -10,6 +9,7 @@ import { Campaign, CampaignSchema } from './campaigns.schema';
     MongooseModule.forFeature([{ name: Campaign.name, schema: CampaignSchema }])
   ],
   providers: [CampaignsService],
-  controllers: [CampaignsController]
+  controllers: [CampaignsController],
+  exports: [MongooseModule]
 })
 export class CampaignsModule { }

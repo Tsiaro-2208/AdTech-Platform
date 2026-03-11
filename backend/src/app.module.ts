@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CampaignsModule } from './campaigns/campaigns.module';
+import { ServeAdModule } from './serve-ad/serve-ad.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { CampaignsModule } from './campaigns/campaigns.module';
       }),
     }),
     CampaignsModule,
+    ServeAdModule,
   ],
   controllers: [AppController],
   providers: [AppService],
