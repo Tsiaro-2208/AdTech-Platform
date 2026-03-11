@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CampaignsModule } from './campaigns/campaigns.module';
 import { ServeAdModule } from './serve-ad/serve-ad.module';
+import { StatsModule } from './stats/stats.module';
 import Redis from 'ioredis';
 
 @Module({
@@ -20,6 +21,7 @@ import Redis from 'ioredis';
     }),
     CampaignsModule,
     ServeAdModule,
+    StatsModule,
   ],
   controllers: [AppController],
   providers: [AppService,
