@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CampaignsModule } from './campaigns/campaigns.module';
 import { ServeAdModule } from './serve-ad/serve-ad.module';
+import Redis from 'ioredis';
 
 @Module({
   imports: [
@@ -21,6 +22,17 @@ import { ServeAdModule } from './serve-ad/serve-ad.module';
     ServeAdModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService,
+    {
+      provide: 'REDIS_CLIENT',
+      useFactory: () => {
+        return new Redis({
+          host: process.env.REDIS_HOST || "localhost",
+          port: 6379,
+        });
+      },
+    },
+  ],
+  exports: ['REDIS_CLIENT'],
 })
-export class AppModule {}
+export class AppModule { }
