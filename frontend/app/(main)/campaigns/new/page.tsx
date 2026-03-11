@@ -1,6 +1,10 @@
+import CampaignForm from "@/components/campaigns/form"
+
 const NewCampaignPage = () => {
   return (
-    <div>NewCampaignPage</div>
+    <div className="w-full">
+      <CampaignForm />
+    </div>
   )
 }
 

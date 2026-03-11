@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/providers";
+import { Toaster } from "sonner";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -23,8 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={quicksand.variable}>
       <body
-        className={`${quicksand.className} antialiased`}
+        className={`${quicksand.className} antialiased bg-primary text-slate-100`}
       >
+        <Toaster position="top-center" richColors />
         <Providers>
           {children}
         </Providers>

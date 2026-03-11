@@ -15,7 +15,7 @@ const CampaignsList = ({ campaigns }: { campaigns: Campaign[] }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    
+
 
                     {campaigns.length === 0 ? (
                         <tr>
