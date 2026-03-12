@@ -3,9 +3,9 @@ import GooeyNav from "@/components/GooeyNav";
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
 
     const items = [
-        { label: "Tableau de bord", href: "/campaigns/dashboard" },
-        { label: "Liste des campagnes", href: "/campaigns" },
-        { label: "Nouvelle campagne", href: "/campaigns/new" },
+        { label: "Tableau de bord", href: "/dashboard" },
+        { label: "Liste des campagnes", href: "/" },
+        { label: "Nouvelle campagne", href: "/new" },
     ];
 
     return (
