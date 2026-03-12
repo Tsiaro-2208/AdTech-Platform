@@ -38,7 +38,7 @@ services:
       context: ./backend
       target: development
     container_name: adtech-backend
-    command: npm run start:dev
+    command: sh -c "npm install && npm run start:dev"
     ports:
       - "5000:5000"
     environment:
@@ -60,21 +60,18 @@ services:
       context: ./frontend
       target: development
     container_name: adtech-frontend
-    command: npm run dev
+    command: sh -c "npm install && npm run dev"
     ports:
       - "3000:3000"
     environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:5000
+      - NEXT_PUBLIC_API_URL=http://localhost:5000 
       - WATCHPACK_POLLING=true
-    depends_on:
       - backend
     volumes:
       - ./frontend:/usr/src/app
       - /usr/src/app/node_modules
-      - /usr/src/app/.next
+      - /usr/src/app/.next 
 
 volumes:
   mongo_data:
   redis_data:
-
-

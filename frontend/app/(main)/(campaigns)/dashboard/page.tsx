@@ -6,6 +6,11 @@ import { getStats, Stats } from "@/lib/stats.service"
 import { Medal } from "lucide-react"
 import { useEffect, useState } from "react"
 
+const metadata = {
+    title: "Tableau de bord des campagnes",
+    description: "Vue d'ensemble des performances de vos campagnes publicitaires."
+}
+
 const CampaignsDashboardPage = () => {
 
     const [stats, setStats] = useState<Stats | null>(null)
